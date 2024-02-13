@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kalulator 10</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Salsa">
+	<style type="text/css">
+		*{
+			font-family: 'Salsa';
+		}
+		body{
+			background: black;
+		}
+		form{
+			width: 240px;
+			margin: 50px auto;
+			border: 1px solid white;
+			border-radius: 10px;
+			background: gray;
+		}
+		#display{
+			width: 223px;
+			height: 50px;
+			border: 1px solid black;
+			border-radius: 5px;
+			margin: 5px;
+			text-align: right;
+			font-size: 25px;
+		}
+		.btn{
+			width: 50px;
+			height: 40px;
+			border: 1px solid black;
+			border-radius: 5px;
+			margin-left: 5px;
+			margin-bottom: 5px;
+			cursor: pointer;
+			background: #444;
+			color: #fff;
+			font-size: 18px;
+		}
+		.sm{
+			width: 110px; background: darkgreen;
+		}
+		.ac{
+			width: 110px; background: maroon;
+		}
+		.dl{
+			background: red;
+		}
+		.t{
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<h4 class="t"><a href="dev.html">Developer</a></h4>
+	<form name="calculator">
+		<h2 align="center">Kalkulator</h2>
+		<input id="display" type="text" name="display">
+		<br>
+
+		<input class="btn ac" type="reset" value="AC">
+		<input class="btn dl" type="button" value="&lt" onclick="deleteLastcharacter()">
+						<script type="text/javascript">
+							function deleteLastcharacter(){
+								var display = document.getElementById('display');
+								display.value = display.value.slice(0, -1);
+							}
+						</script>
+		<input class="btn" type="button" value="/" onclick="calculator.display.value +='/'">
+		<br>
+
+		<input class="btn" type="button" value="7" onclick="calculator.display.value +='7'">
+		<input class="btn" type="button" value="8" onclick="calculator.display.value +='8'">
+		<input class="btn" type="button" value="9" onclick="calculator.display.value +='9'">
+		<input class="btn" type="button" value="*" onclick="calculator.display.value +='*'">
+		<br>
+
+		<input class="btn" type="button" value="4" onclick="calculator.display.value +='4'">
+		<input class="btn" type="button" value="5" onclick="calculator.display.value +='5'">
+		<input class="btn" type="button" value="6" onclick="calculator.display.value +='6'">
+		<input class="btn" type="button" value="-" onclick="calculator.display.value +='-'">
+		<br>
+
+		<input class="btn" type="button" value="1" onclick="calculator.display.value +='1'">
+		<input class="btn" type="button" value="2" onclick="calculator.display.value +='2'">
+		<input class="btn" type="button" value="3" onclick="calculator.display.value +='3'">
+		<input class="btn" type="button" value="+" onclick="calculator.display.value +='+'">
+		<br>
+
+		<input class="btn" type="button" value="." onclick="calculator.display.value +='.'">
+		<input class="btn" type="button" value="0" onclick="calculator.display.value +='0'">
+		<input class="btn sm" type="button" value="=" onclick="calculator.display.value = eval (calculator.display.value)">
+	</form>
+</body>
+</html>
